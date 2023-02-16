@@ -43,13 +43,12 @@
     </style>
 </head>
 <body>
-<form id="upload-form" enctype="multipart/form-data">
+<button onclick="selectFile()">上传文件</button>
+<form hidden id="upload-form" enctype="multipart/form-data">
     <input type="file" name="file" multiple="multiple" onchange="renderProgressBar()">
 </form>
 
 <div id="upload-section">
-
-
 </div>
 
 <div hidden class="progress" id="progress_template">
@@ -258,6 +257,13 @@
 
     function hideErrorIcon(id) {
         $(componentPrefix + id).find('#error-icon-span').hide();
+    }
+
+
+</script>
+<script>
+    function selectFile() {
+        $("#upload-form input").click();
     }
 </script>
 </html>

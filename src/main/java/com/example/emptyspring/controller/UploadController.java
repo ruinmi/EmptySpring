@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.EOFException;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -20,9 +21,6 @@ public class UploadController {
             InputStream is = file.getInputStream();
             Thread.sleep(2000);
             System.out.println("ok" + is.available());
-            if (true) {
-                throw new IOException("wocao");
-            }
             return ResponseEntity.ok("上传成功");
         } catch (IOException e) {
             e.printStackTrace();
